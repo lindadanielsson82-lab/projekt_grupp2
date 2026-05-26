@@ -33,15 +33,21 @@ function printGDPChart(GDPdata) {
         });
     }
 
+    const filteredData = combinedData.filter(item =>
+    item.country !== "Luxembourg" &&
+    item.country !== "Malta" &&
+    item.country !== "Ireland"
+    );
+
     // Sortera lägst -> högst
-    combinedData.sort((a, b) => a.value - b.value);
+    filteredData.sort((a, b) => a.value - b.value);
 
     // Arrays till Chart.js
     const labels =
-        combinedData.map(item => item.country);
+        filteredData.map(item => item.country);
 
     const dataValues =
-        combinedData.map(item => item.value);
+        filteredData.map(item => item.value);
 
     const barColors = labels.map(label => {
 
