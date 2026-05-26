@@ -149,3 +149,17 @@ a:hover::after {
   color: #a0aec0;
   font-size: 0.9rem;
 }
+
+.first-container {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  padding: 40px;
+  text-align: left;
+  border-radius: 8px;
+  margin: 50px auto;
+}
+
+img.gif-image {
+  max-width: 300px;
+  max-height: auto;
+}
