@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>KÖPKRAFT</title>
+
+   
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,6 +21,7 @@
       body {
         background-color: #fff9f1;
       }
+
       h1 {
         color: #f9b446;
         font-size: 300%;
@@ -28,17 +32,32 @@
         font-family: "Inter";
         font-size: 30px;
       }
-      .chart-container {
-        width: 1000px;
-        margin: 50px auto;
-      }
-      låda {
-        background-color: #f9b446;
-      }
-    </style>
+</style>
+
+  <script src="https://cdn.plot.ly/plotly-3.5.1.min.js" charset="utf-8"></script>
   </head>
   <body>
-    
+    <header>
+      <h1>Köpkraft</h1>
+      <nav>
+        <ul>
+          <li>
+            <a> Om oss </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a> Statistik </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a> Gör självtest </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <div class="self-test-container">
       <h2>GÖR ETT SJÄLVTEST</h2>
       <p class="test-instruction">Kan du peka ut de dark patterns som finns?</p>
@@ -50,6 +69,7 @@
       </div>
       
       <p class="click-hint">Klicka på boxen för att komma vidare</p>
+
   </div>
 
   <div class="quote-container">
@@ -58,6 +78,31 @@
     </blockquote>
   </div>
 
-  <script src="script.js"></script>
+
+
+    
+    <!--Graf nummer ett-->
+    <div>
+        <canvas id="chartBar" class="bg_blue"></canvas>
+    </div>
+    <div>
+        <canvas id="chartLine" class="bg_blue"></canvas>
+    </div>
+    <div id="cards" class="grid-lg">
+        <div id="card1" class="col-lg-4 offset-lg-1 border">
+            <h1>Europas digitala köpvanor</h1>
+            <p>
+                Den här interaktiva kartan från EU:s officiella statistikbyrå, Eurostat, visar hur stor procent av befolkningen i varje land som handlar på nätet. När man tittar på färgskillnaderna blir en sak väldigt tydlig, Norden och Västeuropa lyser starkast. I länder som Sverige, Danmark och Nederländerna har över 80-85% av befolkningen e-handlat nyligen. 
+                Ju mer vi scrollar, desto mer jagas vi. I de områdena där e-handel är en naturlig del av vardagen innebär att det är precis här som e-handelsbolag har investerat mest pengar i att utveckla avancerade designteknik. Det är vi i dessa länder som dagligen utsätts för flest dolda fällor som försöker styra våra val på autopilot. 
+                Varje litet klick på en “fri frakt”-knapp sätter igång lastbilar och flygplan som cirkulerar över hela Europa. Kartan visar inte bara digital utveckling, den visar var konsumtionshetsen och manipulationen är som allra störst. 
+            </p>
+        </div>
+        <div id="card2" class="col-lg-4 offset-lg-7 border">
+        <div id="chartMap" ></div>
+        <p>Andelen av befolkningen som har e-handlat under 2025. Sverige har ett av de högsta värdena.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
   </body>
 </html>

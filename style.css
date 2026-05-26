@@ -1,15 +1,72 @@
 /* Brödtext (all vanlig text på hela sidan) */
 body {
-    font-family: 'Inter', sans-serif;
+
+
+  font-family: "Inter", sans-serif;
 }
 
 /* Rubriker (H1, H2, H3 osv. får Lexend Mega) */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lexend Mega', sans-serif;
-    font-weight: 400; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lexend Mega", sans-serif;
+  font-weight: 400; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
 }
 
-/* Container för hela självtestet */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff9f1;
+}
+
+li {
+  display: inline;
+  font-family: "Lexend Mega", sans-serif;
+  position: absolute;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+  #cards {
+    display: grid;
+          display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 10px;
+      grid-auto-flow: initial;
+  }
+
+  #card1 {
+    grid-column-end: span 4;
+    grid-column-start: 2;
+    border: 1px solid #101726;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  #card2 {
+    grid-column-end: span 4;
+    grid-column-start: 8;
+    border: 1px solid #101726;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+
 .self-test-container {
     background-color: #0d1b2a; /* Er mörka bakgrundsfärg */
     color: #ffffff;
@@ -88,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 .click-hint {
     color: #a0aec0;
     font-size: 0.9rem;
+
 }
 
 /* Container för att centrera citatet på sidan och skapa luft */
