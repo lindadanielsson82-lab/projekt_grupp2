@@ -196,23 +196,6 @@ a:hover::after {
   margin: 50px;
 }
 
-/* Det stora ljusblå citationstecknet i bakgrunden */
-.quote-container::before {
-  content: "“";
-  font-family: "Lexend Mega", sans-serif;
-  font-size: 350px;
-  color: #7bb2ff;
-  position: absolute;
-  top: -150px; /* Flyttar upp det så det hamnar bakom texten */
-  left: 20%;
-  transform: translateX(-50%); /* Centrerar tecknet helt i mitten */
-  z-index: 1;
-  /* Lägger det bakom texten */
-  opacity: 0.4; /* Gör det lite transparent */
-  pointer-events: none; /* Ser till att det inte är i vägen för klick */
-  margin: 50px;
-}
-
 .first-container {
   background-color: #0d1b2a;
   color: #f68442;
@@ -229,4 +212,32 @@ a:hover::after {
 img.gif-image {
   max-width: 300px;
   max-height: auto;
+}
+
+#cards {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  grid-auto-flow: initial;
+}
+
+#card1 {
+  grid-column-end: span 4;
+  grid-column-start: 2;
+  border: 1px solid #101726;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#card2 {
+  grid-column-end: span 4;
+  grid-column-start: 8;
+  border: 1px solid #101726;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }

@@ -247,18 +247,6 @@ function printMapChart(mapData) {
     text.push(geoLabels[code] + ": " + value + "%");
   });
 
-  // canvas -> div (Plotly kräver div)
-  const oldCanvas = document.getElementById("chartMap");
-
-  const mapDiv = document.createElement("div");
-
-  mapDiv.id = "chartMap";
-
-  mapDiv.style.width = "100%";
-  mapDiv.style.height = "700px";
-
-  oldCanvas.replaceWith(mapDiv);
-
   // Plotly chart
   Plotly.newPlot(
     "chartMap",
