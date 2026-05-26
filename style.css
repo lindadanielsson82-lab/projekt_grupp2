@@ -1,0 +1,10 @@
+/* Brödtext (all vanlig text på hela sidan) */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Rubriker (H1, H2, H3 osv. får Lexend Mega) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lexend Mega', sans-serif;
+    font-weight: 700; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+}
