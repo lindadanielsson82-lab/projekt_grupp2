@@ -6,5 +6,86 @@ body {
 /* Rubriker (H1, H2, H3 osv. får Lexend Mega) */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lexend Mega', sans-serif;
-    font-weight: 700; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+    font-weight: 400; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+}
+
+/* Container för hela självtestet */
+.self-test-container {
+    background-color: #0d1b2a; /* Er mörka bakgrundsfärg */
+    color: #ffffff;
+    padding: 40px;
+    text-align: left;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.self-test-container h2 {
+    color: #e67e22; /* Er orangea rubrikfärg */
+    margin-bottom: 5px;
+    font-size: 250%;
+}
+
+/* Återställ textstorleken specifikt inuti självtestet så det inte blir 30px */
+.self-test-container p, 
+.test-explanation p {
+    font-size: 16px; 
+    color: #e67e22;
+}
+
+/* Klickbara zonen */
+.test-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: transform 0.2s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.test-box:hover {
+    transform: scale(1.01); /* Diskret feedback vid hover */
+}
+
+.test-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Förklarande text-boxen under bilden */
+.test-explanation {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-left: 5px solid #e67e22;
+    text-align: left;
+    border-radius: 0 4px 4px 0;
+}
+
+.test-explanation h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Lexend Mega', sans-serif;
+    font-weight: 400;
+    color: #101726;
+}
+
+.test-explanation p {
+    font-size: 16px;
+    color: #101726;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Klass för att dölja texten innan man klickat */
+.hidden {
+    display: none;
+}
+
+.click-hint {
+    color: #a0aec0;
+    font-size: 0.9rem;
 }
