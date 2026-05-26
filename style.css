@@ -1,10 +1,37 @@
 /* Brödtext (all vanlig text på hela sidan) */
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* Rubriker (H1, H2, H3 osv. får Lexend Mega) */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lexend Mega', sans-serif;
-    font-weight: 700; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lexend Mega", sans-serif;
+  font-weight: 700; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff9f1;
+}
+
+li {
+  display: inline;
+  font-family: "Lexend Mega", sans-serif;
+  position: absolute;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
 }

@@ -1,17 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lexend+Mega:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lexend+Mega:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" ;></script>
+    <style>
+      body {
+        background-color: #fff9f1;
+      }
+      .chart-container {
+        width: 1000px;
+        margin: 50px auto;
+      }
+      låda {
+        background-color: #f9b446;
+      }
+    </style>
+    <script
+      src="https://cdn.plot.ly/plotly-3.5.1.min.js"
+      charset="utf-8"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>Köpkraft</h1>
+      <nav>
+        <ul>
+          <li>
+            <a> Om oss </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a> Statistik </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a> Gör självtest </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!--Graf nummer ett-->
+    <div class="chart-container">
+      <canvas id="chartBar"></canvas>
+    </div>
+    <!--Graf nummer två-->
+    <div class="chart-container">
+      <canvas id="chartLine"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartMap"></canvas>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
