@@ -1,10 +1,8 @@
-/* Brödtext (all vanlig text på hela sidan) */
 body {
   font-family: "Inter", sans-serif;
   background-color: #fff9f1;
 }
 
-/* Rubriker (H1, H2, H3 osv. får Lexend Mega) */
 h1,
 h2,
 h3,
@@ -12,7 +10,17 @@ h4,
 h5,
 h6 {
   font-family: "Lexend Mega", sans-serif;
-  font-weight: 700; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+  font-weight: 700;
+}
+
+.titel {
+  font-size: 60px;
+  text-align: center;
+}
+
+.paragraf1 {
+  font-family: "Inter";
+  color: #f68442;
 }
 
 .logotyp-ruta {
@@ -71,7 +79,7 @@ a:hover::after {
 
 /* Container för hela självtestet */
 .self-test-container {
-  background-color: #0d1b2a; /* Er mörka bakgrundsfärg */
+  background-color: #0d1b2a;
   color: #ffffff;
   padding: 40px;
   text-align: left;
@@ -81,7 +89,7 @@ a:hover::after {
 }
 
 .self-test-container h2 {
-  color: #e67e22; /* Er orangea rubrikfärg */
+  color: #e67e22;
   margin-bottom: 5px;
   font-size: 250%;
 }
@@ -152,11 +160,15 @@ a:hover::after {
 
 .first-container {
   background-color: #0d1b2a;
-  color: #ffffff;
+  color: #f68442;
+  display: flex;
   padding: 40px;
   text-align: left;
   border-radius: 8px;
   margin: 50px auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 img.gif-image {
