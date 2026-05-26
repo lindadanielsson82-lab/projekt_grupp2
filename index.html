@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KÖPKRAFT</title>
+    <title>Document</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,16 +18,6 @@
       body {
         background-color: #fff9f1;
       }
-      h1 {
-        color: #f9b446;
-        font-size: 300%;
-        font-family: "Lexend Mega";
-      }
-      p {
-        color: #101726;
-        font-family: "Inter";
-        font-size: 30px;
-      }
       .chart-container {
         width: 1000px;
         margin: 50px auto;
@@ -36,8 +26,32 @@
         background-color: #f9b446;
       }
     </style>
+    <script
+      src="https://cdn.plot.ly/plotly-3.5.1.min.js"
+      charset="utf-8"
+    ></script>
   </head>
   <body>
+    <header>
+      <h1>Köpkraft</h1>
+      <nav>
+        <ul>
+          <li>
+            <a> Om oss </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a> Statistik </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a> Gör självtest </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <!--Graf nummer ett-->
     <div class="chart-container">
       <canvas id="chartBar"></canvas>
@@ -45,6 +59,9 @@
     <!--Graf nummer två-->
     <div class="chart-container">
       <canvas id="chartLine"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartMap"></canvas>
     </div>
     <script src="script.js"></script>
   </body>
