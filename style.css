@@ -10,7 +10,7 @@ h4,
 h5,
 h6 {
   font-family: "Lexend Mega", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .titel {
@@ -114,7 +114,7 @@ a:hover::after {
 }
 
 .test-box:hover {
-  transform: scale(1.01); /* Diskret feedback vid hover */
+  transform: scale(1.05); /* Diskret feedback vid hover */
 }
 
 .test-box img {
@@ -156,6 +156,61 @@ a:hover::after {
 .click-hint {
   color: #a0aec0;
   font-size: 0.9rem;
+}
+
+/* Container för att centrera citatet på sidan och skapa luft */
+.quote-container {
+  max-width: 650px;
+  margin: 80px auto; /* Skapar ordentligt med avstånd uppåt och nedåt */
+  padding: 0, 20px;
+  text-align: center;
+  position: relative; /* Krävs för att placering av tecknet ska fungera */
+}
+
+/* Själva citattexten */
+.quote-container blockquote {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #101726;
+  margin: 20px;
+  padding: 50px;
+  position: relative;
+  z-index: 2; /* Lägger texten ovanpå det stora tecknet */
+}
+
+/* Det stora ljusblå citationstecknet i bakgrunden */
+.quote-container::before {
+  content: "“";
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 350px;
+  color: #7bb2ff;
+  position: absolute;
+  top: -150px; /* Flyttar upp det så det hamnar bakom texten */
+  left: 20%;
+  transform: translateX(-50%); /* Centrerar tecknet helt i mitten */
+  z-index: 1; /* Lägger det bakom texten */
+  opacity: 0.4; /* Gör det lite transparent */
+  pointer-events: none; /* Ser till att det inte är i vägen för klick */
+  margin: 50px;
+}
+
+/* Det stora ljusblå citationstecknet i bakgrunden */
+.quote-container::before {
+  content: "“";
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 350px;
+  color: #7bb2ff;
+  position: absolute;
+  top: -150px; /* Flyttar upp det så det hamnar bakom texten */
+  left: 20%;
+  transform: translateX(-50%); /* Centrerar tecknet helt i mitten */
+  z-index: 1;
+  /* Lägger det bakom texten */
+  opacity: 0.4; /* Gör det lite transparent */
+  pointer-events: none; /* Ser till att det inte är i vägen för klick */
+  margin: 50px;
 }
 
 .first-container {
