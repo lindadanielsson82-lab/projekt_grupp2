@@ -29,13 +29,20 @@ function printGDPChart(GDPdata) {
     });
   }
 
+  const filteredData = combinedData.filter(
+    (item) =>
+      item.country !== "Luxembourg" &&
+      item.country !== "Malta" &&
+      item.country !== "Ireland",
+  );
+
   // Sortera lägst -> högst
-  combinedData.sort((a, b) => a.value - b.value);
+  filteredData.sort((a, b) => a.value - b.value);
 
   // Arrays till Chart.js
-  const labels = combinedData.map((item) => item.country);
+  const labels = filteredData.map((item) => item.country);
 
-  const dataValues = combinedData.map((item) => item.value);
+  const dataValues = filteredData.map((item) => item.value);
 
   const barColors = labels.map((label) => {
     if (label === "Sweden") {
@@ -164,4 +171,136 @@ function printTransChart(csv) {
       },
     },
   });
+}
+
+const mapURL =
+  "https://ec.europa.eu/eurostat/api/dissemination/sdmx/3.0/data/dataflow/ESTAT/isoc_ec_ib20/1.0/*.*.*.*.*?c[freq]=A&c[ind_type]=IND_TOTAL&c[indic_is]=I_BLT12&c[unit]=PC_IND&c[geo]=BE,BG,CZ,DK,DE,EE,IE,EL,ES,FR,HR,IT,CY,LV,LT,LU,HU,MT,NL,AT,PL,PT,RO,SI,SK,FI,SE,IS,NO,CH,UK,BA,ME,MK,AL,RS,TR,XK&c[TIME_PERIOD]=2025&compress=false&format=json&lang=en";
+
+fetch(mapURL)
+  .then((response) => response.json())
+  .then((data) => printMapChart(data));
+
+function printMapChart(mapData) {
+  console.log(mapData);
+
+  // ISO2 -> ISO3
+  const isoMap = {
+    SE: "SWE",
+    DE: "DEU",
+    FR: "FRA",
+    DK: "DNK",
+    NO: "NOR",
+    FI: "FIN",
+    IT: "ITA",
+    ES: "ESP",
+    PT: "PRT",
+    NL: "NLD",
+    BE: "BEL",
+    PL: "POL",
+    CZ: "CZE",
+    AT: "AUT",
+    CH: "CHE",
+    IE: "IRL",
+    EL: "GRC",
+    RO: "ROU",
+    BG: "BGR",
+    HR: "HRV",
+    SI: "SVN",
+    SK: "SVK",
+    HU: "HUN",
+    LT: "LTU",
+    LV: "LVA",
+    EE: "EST",
+    LU: "LUX",
+    CY: "CYP",
+    MT: "MLT",
+    IS: "ISL",
+    UK: "GBR",
+    BA: "BIH",
+    ME: "MNE",
+    MK: "MKD",
+    AL: "ALB",
+    RS: "SRB",
+    TR: "TUR",
+    XK: "XKX",
+  };
+
+  // Eurostat geo labels
+  const geoLabels = mapData.dimension.geo.category.label;
+
+  // Eurostat values
+  const values = Object.values(mapData.value);
+
+  const locations = [];
+  const zValues = [];
+  const text = [];
+
+  // Viktigt:
+  // labels + values måste matchas via samma index
+  Object.keys(geoLabels).forEach((code, i) => {
+    const value = values[i];
+
+    locations.push(isoMap[code]);
+
+    zValues.push(value);
+
+    text.push(geoLabels[code] + ": " + value + "%");
+  });
+
+  // canvas -> div (Plotly kräver div)
+  const oldCanvas = document.getElementById("chartMap");
+
+  const mapDiv = document.createElement("div");
+
+  mapDiv.id = "chartMap";
+
+  mapDiv.style.width = "100%";
+  mapDiv.style.height = "700px";
+
+  oldCanvas.replaceWith(mapDiv);
+
+  // Plotly chart
+  Plotly.newPlot(
+    "chartMap",
+    [
+      {
+        type: "choropleth",
+
+        locationmode: "ISO-3",
+
+        locations: locations,
+
+        z: zValues,
+
+        text: text,
+
+        hovertemplate: "%{text}<extra></extra>",
+
+        colorscale: "YlOrBr",
+
+        colorbar: {
+          title: "Internet purchases (%)",
+        },
+      },
+    ],
+    {
+      geo: {
+        scope: "europe",
+
+        showframe: false,
+
+        showcoastlines: false,
+
+        bgcolor: "#101726",
+      },
+
+      paper_bgcolor: "#101726",
+
+      plot_bgcolor: "#101726",
+
+      font: {
+        color: "white",
+      },
+    },
+  );
 }
