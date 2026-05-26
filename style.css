@@ -13,7 +13,7 @@ h4,
 h5,
 h6 {
   font-family: "Lexend Mega", sans-serif;
-  font-weight: 400; /* Gör rubrikerna feta, använd 400 om ni vill ha dem tunnare */
+  font-weight: 400; 
 }
 
 ul {
