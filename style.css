@@ -35,3 +35,32 @@ li a {
   padding: 16px;
   text-decoration: none;
 }
+
+  #cards {
+    display: grid;
+          display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 10px;
+      grid-auto-flow: initial;
+  }
+
+  #card1 {
+    grid-column-end: span 4;
+    grid-column-start: 2;
+    border: 1px solid #101726;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  #card2 {
+    grid-column-end: span 4;
+    grid-column-start: 8;
+    border: 1px solid #101726;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+

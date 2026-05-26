@@ -259,21 +259,6 @@ function printMapChart(mapData) {
         );
     });
 
-    // canvas -> div (Plotly kräver div)
-    const oldCanvas =
-        document.getElementById('chartMap');
-
-    const mapDiv =
-        document.createElement('div');
-
-    mapDiv.id = 'chartMap';
-
-    mapDiv.style.width = '100%';
-    mapDiv.style.height = '700px';
-
-    oldCanvas.replaceWith(mapDiv);
-
-    // Plotly chart
     Plotly.newPlot('chartMap', [
 
         {
@@ -307,15 +292,15 @@ function printMapChart(mapData) {
 
             showcoastlines: false,
 
-            bgcolor: '#101726'
+            bgcolor: 'rgba(255, 249, 241, 1)'
         },
 
-        paper_bgcolor: '#101726',
+        paper_bgcolor: 'rgba(255, 249, 241, 1)',
 
-        plot_bgcolor: '#101726',
+        plot_bgcolor: 'rgba(255, 249, 241, 1)',
 
         font: {
-            color: 'white'
+            color: '#101726'
         }
     });
 }
