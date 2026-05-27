@@ -303,7 +303,7 @@ const testSteps = [
   {
     image: "images/självtest_bild2.jpeg",
     title: "Dolda kostnader",
-    text: "<strong>Vad du ser:</strong> En stor knapp där det står 2 848 kr, men en slutnota som plötsligt blir högre. <br><strong>Dold fälla:</strong> Hidden Costs (Dolda kostnader). Företaget gömmer extra expeditionsavgifter i den finstilta texten ända fram till betalsteget. De hoppas att du ska vara för trött för att avbryta köpet efter att du redan lag ttid på att välja dina varor.",
+    text: "<strong>Vad du ser:</strong> En stor knapp där det står 2 848 kr, men en slutnota som plötsligt blir högre. <br><strong>Dold fälla:</strong> Hidden Costs (Dolda kostnader). Företaget gömmer extra expeditionsavgifter i den finstilta texten ända fram till betalsteget. De hoppas att du ska vara för trött för att avbryta köpet efter att du redan lagt tid på att välja dina varor.",
   },
   {
     image: "images/självtest_bild3.jpeg",
@@ -318,7 +318,7 @@ const testSteps = [
   {
     image: "images/självtest_bild5.jpeg",
     title: "Vilseledning",
-    text: "<strong>Vad du ser:</strong> En stor, färgglad knapp som uppmanar dig att skydda din resa med en försäkring.<br><strong>Dold fälla:</strong> Misdirection (Vilseledning). Designen styr medvetet din uppmärksamhet mot den dyra knappen för att dölja att det faktiskt finns ett gratisalternativ. Genom att göra avböjningsknappen extremt liten, grå och ömd i botten utnyttjar de din visuella vana för att lura dig att betala extra.",
+    text: "<strong>Vad du ser:</strong> En stor, färgglad knapp som uppmanar dig att skydda din resa med en försäkring.<br><strong>Dold fälla:</strong> Misdirection (Vilseledning). Designen styr medvetet din uppmärksamhet mot den dyra knappen för att dölja att det faktiskt finns ett gratisalternativ. Genom att göra avböjningsknappen extremt liten, grå och gömd i botten utnyttjar de din visuella vana för att lura dig att betala extra.",
   },
   {
     image: "images/självtest_bild6.jpeg",
