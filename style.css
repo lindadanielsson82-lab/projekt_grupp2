@@ -246,31 +246,155 @@ img.graph-image {
 }
 
 #cards {
-  display: grid;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 10px;
-  grid-auto-flow: initial;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 #card1 {
-  grid-column-end: span 4;
-  grid-column-start: 2;
+  width: min(1400px, 90%);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
   border: 1px solid #101726;
   border-radius: 8px;
-  padding: 20px;
+  padding: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+#cardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#card1 h1 {
+  font-weight: 400;
+  color: #f68442;
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  letter-spacing: 2px;
+}
+
+#card1 p {
+  max-width: 650px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #101726;
+}
+
+#cardMapWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#chartMap {
+  width: 100%;
+  max-width: 550px;
+  height: 450px;
+  margin-bottom: 0px;
+}
+
+#cardMapWrapper p {
+  width: 100%;
+  max-width: 550px;
+  margin-top: 8px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #101726;
+}
+
+#cardMapWrapper p span {
+  display: block;
+  max-width: 350px;
+}
+
+
+
+
+
+
+#cardBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
 }
 
 #card2 {
-  grid-column-end: span 4;
-  grid-column-start: 8;
-  border: 1px solid #101726;
+  width: min(1800px, 90%);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  border: 1px solid #fff9f1;
   border-radius: 8px;
-  padding: 20px;
+  padding: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
+  box-sizing: border-box;
+  background-color:#101726
+}
+
+#cardBarText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#card2 h1 {
+  font-weight: 400;
+  color: #f68442;
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  letter-spacing: 2px;
+}
+
+#card2 p {
+  max-width: 650px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #fff9f1;
+}
+
+#cardBarWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#chartBar {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin-bottom: 0px;
+}
+
+#cardBarWrapper p {
+  width: 100%;
+  max-width: 550px;
+  margin-top: 8px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #fff9f1;
+  align-self: flex-start
+}
+
+#cardBarWrapper p span {
+  display: block;
+  max-width: 350px;
 }
 
 .kallor-lista {

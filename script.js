@@ -8,16 +8,15 @@ fetch(urlEstatGDP)
 function printGDPChart(GDPdata) {
   console.log(GDPdata);
 
-  // Landkoder
+
   const geoCategories = GDPdata.dimension.geo.category.index;
 
-  // Landnamn
+
   const geoLabels = GDPdata.dimension.geo.category.label;
 
-  // GDP-värden
+
   const values = GDPdata.value;
 
-  // Bygg korrekt array
   const combinedData = [];
 
   for (const countryCode in geoCategories) {
@@ -36,10 +35,9 @@ function printGDPChart(GDPdata) {
       item.country !== "Ireland",
   );
 
-  // Sortera lägst -> högst
+
   filteredData.sort((a, b) => a.value - b.value);
 
-  // Arrays till Chart.js
   const labels = filteredData.map((item) => item.country);
 
   const dataValues = filteredData.map((item) => item.value);
@@ -109,20 +107,20 @@ function printTransChart(csv) {
     const year = Number(cols[2]);
     const value = Number(cols[3]);
 
-    // 👇 VIKTIGT: bara världen
+   
     if (entity === "World" && !isNaN(year) && !isNaN(value)) {
-      // en unik punkt per år
+
       map.set(year, value);
     }
   });
 
-  // gör till array
+
   const data = Array.from(map, ([year, value]) => ({
     year,
     value,
   }));
 
-  // sortera år
+
   data.sort((a, b) => a.year - b.year);
 
   const labels = data.map((d) => d.year);
@@ -183,7 +181,7 @@ fetch(mapURL)
 function printMapChart(mapData) {
   console.log(mapData);
 
-  // ISO2 -> ISO3
+
   const isoMap = {
     SE: "SWE",
     DE: "DEU",
@@ -225,18 +223,17 @@ function printMapChart(mapData) {
     XK: "XKX",
   };
 
-  // Eurostat geo labels
+
   const geoLabels = mapData.dimension.geo.category.label;
 
-  // Eurostat values
+ 
   const values = Object.values(mapData.value);
 
   const locations = [];
   const zValues = [];
   const text = [];
 
-  // Viktigt:
-  // labels + values måste matchas via samma index
+
   Object.keys(geoLabels).forEach((code, i) => {
     const value = values[i];
 
@@ -247,7 +244,7 @@ function printMapChart(mapData) {
     text.push(geoLabels[code] + ": " + value + "%");
   });
 
-  // Plotly chart
+
   Plotly.newPlot(
     "chartMap",
     [
@@ -290,6 +287,9 @@ function printMapChart(mapData) {
         color: "white",
       },
     },
+    {
+      responsive: true
+    }
   );
 }
 
@@ -303,7 +303,7 @@ const testSteps = [
   {
     image: "images/självtest_bild2.jpeg",
     title: "Dolda kostnader",
-    text: "<strong>Vad du ser:</strong> En stor knapp där det står 2 848 kr, men en slutnota som plötsligt blir högre. <br><strong>Dold fälla:</strong> Hidden Costs (Dolda kostnader). Företaget gömmer extra expeditionsavgifter i den finstilta texten ända fram till betalsteget. De hoppas att du ska vara för trött för att avbryta köpet efter att du redan lagt tid på att välja dina varor.",
+    text: "<strong>Vad du ser:</strong> En stor knapp där det står 2 848 kr, men en slutnota som plötsligt blir högre. <br><strong>Dold fälla:</strong> Hidden Costs (Dolda kostnader). Företaget gömmer extra expeditionsavgifter i den finstilta texten ända fram till betalsteget. De hoppas att du ska vara för trött för att avbryta köpet efter att du redan lag ttid på att välja dina varor.",
   },
   {
     image: "images/självtest_bild3.jpeg",
@@ -318,7 +318,7 @@ const testSteps = [
   {
     image: "images/självtest_bild5.jpeg",
     title: "Vilseledning",
-    text: "<strong>Vad du ser:</strong> En stor, färgglad knapp som uppmanar dig att skydda din resa med en försäkring.<br><strong>Dold fälla:</strong> Misdirection (Vilseledning). Designen styr medvetet din uppmärksamhet mot den dyra knappen för att dölja att det faktiskt finns ett gratisalternativ. Genom att göra avböjningsknappen extremt liten, grå och gömd i botten utnyttjar de din visuella vana för att lura dig att betala extra.",
+    text: "<strong>Vad du ser:</strong> En stor, färgglad knapp som uppmanar dig att skydda din resa med en försäkring.<br><strong>Dold fälla:</strong> Misdirection (Vilseledning). Designen styr medvetet din uppmärksamhet mot den dyra knappen för att dölja att det faktiskt finns ett gratisalternativ. Genom att göra avböjningsknappen extremt liten, grå och ömd i botten utnyttjar de din visuella vana för att lura dig att betala extra.",
   },
   {
     image: "images/självtest_bild6.jpeg",
