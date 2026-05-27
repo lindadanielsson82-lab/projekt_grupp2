@@ -13,14 +13,31 @@ h6 {
   font-weight: 400;
 }
 
-.titel {
+.text {
+  flex: 1;
+}
+
+.text-titel {
   font-size: 60px;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 .paragraf1 {
   font-family: "Inter";
+  line-height: 1.6;
   color: #f68442;
+  max-width: 65ch;
+}
+
+.first-container {
+  background-color: #0d1b2a;
+  color: #f68442;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  gap: 50px;
 }
 
 .logotyp-ruta {
@@ -196,22 +213,9 @@ a:hover::after {
   margin: 50px;
 }
 
-.first-container {
-  background-color: #0d1b2a;
-  color: #f68442;
-  display: flex;
-  padding: 40px;
-  text-align: left;
-  border-radius: 8px;
-  margin: 50px auto;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 img.gif-image {
-  max-width: 300px;
-  max-height: auto;
+  width: 350px;
+  border-radius: 10px;
 }
 
 #cards {
