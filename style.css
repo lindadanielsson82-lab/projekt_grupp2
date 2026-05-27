@@ -241,3 +241,32 @@ img.gif-image {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
+.kallor-lista {
+  list-style-type: none;
+    padding-left: 0;
+    font-family: Inter sans-serif;
+    font-size: 18px;
+    max-width: 70ch; /*max 50 tecken långa meningar */
+}
+
+.kallor-lista li {
+  margin-bottom: 4%;
+  line-height: 1.6;
+  /* Här skapar vi det orangea strecket */
+  border-left: 4px solid #f28b50; /* 4px tjockt, solitt streck. Byt ut färgkoden om ni har en annan orange! */
+  padding-left: 15px;             /* Skapar ett luftigt mellanrum mellan strecket och texten */
+}
+
+.kallor-lista a {
+  color: #f28b50;
+
+}
+
+.kallor-rubrik {
+  font-family: Lexend Mega sans-serif;
+  font-size: 30px;
+  color:#101726;
+  margin-bottom: 20px;
+  padding-left: 19px;
+}
