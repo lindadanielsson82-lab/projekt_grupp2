@@ -425,3 +425,38 @@ img.graph-image {
   margin-bottom: 20px;
   padding-left: 19px;
 }
+
+/* Själva huvudboxen */
+.text-box {
+  border: 1px solid #101726;   /* Mörk ram */
+  border-radius: 12px;         /* Rundade hörn */
+  padding: 24px;               /* Luft på insidan */
+  max-width: 70ch;             /* Samma sköna textbredd som källorna */
+  background-color: #fffaf5;   /* Din ljusa bakgrundsfärg */
+  transition: all 0.3s ease;   /* Gör att det känns mjukt när den öppnas */
+  font-family: Lexend Mega sans-serif;
+  box-shadow:0px 4px 12px rgba(16, 23, 38, 0.3);
+}
+
+/* Rubriken och den synliga texten inuti summary */
+.text-box summary {
+  cursor: pointer;             /* Gör att muspekaren blir en hand */
+  list-style: none; /* tar bort pilen bredvid rubriken i Chrome, Firefox, Edge mfl */
+}
+
+.text-box summary::-webkit-details-marker { /*tar bort pilen i Safari*/
+  display: none; 
+}
+
+.text-box summary h2 {
+  display: inline-block;       /* Håller rubriken snygg bredvid pilen */
+  margin-top: 0;
+  font-family: 'Lexend Mega', sans-serif;
+}
+
+/* Det dolda innehållet som hamnar under när man expanderar */
+.extra-content {
+  margin-top: 16px;
+  padding-top: 16px;
+  
+}
