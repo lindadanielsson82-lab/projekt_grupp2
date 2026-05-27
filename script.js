@@ -312,7 +312,7 @@ const testSteps = [
   },
   {
     image: "images/självtest_bild4.jpeg",
-    title: "Förikryssade väl",
+    title: "Förikryssade val",
     text: "<strong>Vad du ser:</strong> Förslag på tillbehör under din vara i kundvagnen.<br><strong>Dold fälla:</strong> Sneak into basket (Förikryssade val). Butiken har redan kryssat i rutan och lagt till extraprodukter i din totala summa i smyg. Genom att tvinga dig aktivt klicka ur rutan utnyttjar de din ouppmärksamhet för att sälja mer.",
   },
   {

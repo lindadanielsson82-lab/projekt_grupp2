@@ -115,11 +115,11 @@ h6 {
 /* Container för hela självtestet */
 .self-test-container {
   background-color: #0d1b2a;
-  color: #ffffff;
+  color: #fff9f1;
   padding: 40px;
   text-align: left;
   border-radius: 8px;
-  max-width: 800px;
+  max-width: 1500px;
   margin: 50px auto;
 }
 
@@ -132,38 +132,44 @@ h6 {
 /* Återställ textstorleken specifikt inuti självtestet så det inte blir 30px */
 .self-test-container p,
 .test-explanation p {
-  font-size: 16px;
-  color: #e67e22;
+  font-size: 20px;
+  color: #fff9f1;
+  
 }
 
 /* Klickbara zonen */
 .test-box {
-  background-color: #ffffff;
-  padding: 20px;
+  background-color: #fff9f1;
+  padding: 40px;
   border-radius: 4px;
   cursor: pointer;
   margin: 20px 0;
   transition: transform 0.2s ease;
-  position: relative;
+  position: center;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.test-box:hover {
+.test-box:hover img {
   transform: scale(1.05); /* Diskret feedback vid hover */
+  
 }
 
 .test-box img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  aspect-ratio: 21 / 10;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.2s ease; /*Gör att "poppen" glider fram mjukt*/
 }
 
 /* Förklarande text-boxen under bilden */
 .test-explanation {
   margin-top: 20px;
   padding: 15px;
-  background-color: #f8f9fa;
+  background-color: #fff9f1;
   border-left: 5px solid #e67e22;
   text-align: left;
   border-radius: 0 4px 4px 0;
@@ -195,7 +201,7 @@ h6 {
 
 /* Container för att centrera citatet på sidan och skapa luft */
 .quote-container {
-  max-width: 650px;
+  max-width: 1000px;
   margin: 80px auto; /* Skapar ordentligt med avstånd uppåt och nedåt */
   padding: 0, 20px;
   text-align: center;
@@ -204,8 +210,8 @@ h6 {
 
 /* Själva citattexten */
 .quote-container blockquote {
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 42px;
   font-weight: 400;
   line-height: 1.5;
   color: #101726;
@@ -213,22 +219,26 @@ h6 {
   padding: 50px;
   position: relative;
   z-index: 2; /* Lägger texten ovanpå det stora tecknet */
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* Det stora ljusblå citationstecknet i bakgrunden */
 .quote-container::before {
   content: "“";
   font-family: "Lexend Mega", sans-serif;
-  font-size: 350px;
+  font-size: 500px;
   color: #7bb2ff;
   position: absolute;
-  top: -150px; /* Flyttar upp det så det hamnar bakom texten */
+  top: -300px; /* Flyttar upp det så det hamnar bakom texten */
   left: 20%;
-  transform: translateX(-50%); /* Centrerar tecknet helt i mitten */
   z-index: 1; /* Lägger det bakom texten */
   opacity: 0.4; /* Gör det lite transparent */
   pointer-events: none; /* Ser till att det inte är i vägen för klick */
   margin: 50px;
+  display: inline-block;
+  transform: translateX(-50%) rotate(180deg);
 }
 
 img.gif-image {
