@@ -231,7 +231,7 @@ h6 {
   font-size: 500px;
   color: #7bb2ff;
   position: absolute;
-  top: -300px; /* Flyttar upp det så det hamnar bakom texten */
+  top: -390px; /* Flyttar upp det så det hamnar bakom texten */
   left: 20%;
   z-index: 1; /* Lägger det bakom texten */
   opacity: 0.4; /* Gör det lite transparent */
