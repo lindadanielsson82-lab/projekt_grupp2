@@ -571,3 +571,28 @@ img.graph-image {
   background-color: #f28b50 !important; /* Er exakta orangea färg! */
   border-radius: 50% !important;      /* Gör den helt rund */
 }
+
+.site-footer {
+  background-color: #101726;
+  color: #fffaf5;
+  padding: 40px 20px 20px 20px;
+  font-family: sans-serif;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.footer-content h3 {
+  color: #f28b50 !important;
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.footer-bottom p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 5px 0;
+  opacity: 0.85;
+}
