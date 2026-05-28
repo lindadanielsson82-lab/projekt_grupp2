@@ -436,12 +436,31 @@ img.graph-image {
   padding-left: 19px;
 }
 
-/* Själva huvudboxen */
+.box-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  margin: 40px auto;
+  align-items: flex-start;
+  
+}
+
+@media (max-width: 768px) {
+  .box-container {
+    flex-direction: column; 
+    gap: 20px;
+  }
+}
+
+/* Utfälldbar meny */
 .text-box {
+  flex: 1;
   border: 1px solid #101726;   /* Mörk ram */
   border-radius: 12px;         /* Rundade hörn */
   padding: 24px;               /* Luft på insidan */
-  max-width: 70ch;             /* Samma sköna textbredd som källorna */
+  max-width: 70ch;             /* Samma textbredd som källorna */
   background-color: #fffaf5;   /* Din ljusa bakgrundsfärg */
   transition: all 0.3s ease;   /* Gör att det känns mjukt när den öppnas */
   font-family: Lexend Mega sans-serif;
@@ -452,7 +471,12 @@ img.graph-image {
 .text-box summary {
   cursor: pointer;             /* Gör att muspekaren blir en hand */
   list-style: none; /* tar bort pilen bredvid rubriken i Chrome, Firefox, Edge mfl */
+  outline: none;
+  padding: 5px;
+  border-radius: 4px;
+  
 }
+
 
 .text-box summary::-webkit-details-marker { /*tar bort pilen i Safari*/
   display: none; 
@@ -462,11 +486,88 @@ img.graph-image {
   display: inline-block;       /* Håller rubriken snygg bredvid pilen */
   margin-top: 0;
   font-family: 'Lexend Mega', sans-serif;
+  color: #f28b50;
 }
 
 /* Det dolda innehållet som hamnar under när man expanderar */
 .extra-content {
   margin-top: 16px;
   padding-top: 16px;
+  cursor: pointer;
   
+}
+
+/* ==========================================================================
+   1. GRUNDSTYLING (Gör båda klasserna orangea och fetstilta hela tiden)
+   ========================================================================== */
+   .text-box .visa-mer, 
+   .text-box .visa-mindre {
+       color: #f28b50 !important;      /* Sätter er orangea färg på båda två */
+       font-weight: bold !important;    /* Gör båda fetstilta */
+       cursor: pointer;
+   }
+   
+   /* ==========================================================================
+      2. NÄR MENYN ÄR STÄNGD (Standardläget)
+      ========================================================================== */
+   
+   /* Visa "läsa mer" */
+   .text-box .visa-mer {
+       display: inline !important;
+   }
+   
+   /* Göm "stäng" helt */
+   .text-box .visa-mindre {
+       display: none !important;
+   }
+   
+   /* ==========================================================================
+      3. NÄR MENYN ÄR ÖPPEN (När man har klickat på boxen)
+      ========================================================================== */
+   
+   /* Göm "läsa mer" */
+   .text-box[open] .visa-mer {
+       display: none !important;
+   }
+   
+   /* Tvinga fram "stäng"-texten så den syns perfekt */
+   .text-box[open] .visa-mindre {
+       display: inline !important;
+   }
+
+   /* Gör så att när rutan är öppen, blir hela den extra texten klickbar 
+   och stänger rutan OM man klickar längst ner */
+.text-box[open] .extra-content {
+  pointer-events: none; /* Gör att den vanliga texten inte reagerar på klick */
+}
+
+/* Aktivera klick enbart på själva stäng-texten */
+.text-box .visa-mindre {
+  pointer-events: auto; /* Gör texten klickbar igen */
+}
+
+.orange-punkt-lista {
+  list-style: none !important;        /* Denna tar bort de svarta prickarna helt! */
+  padding-left: 25px !important;      /* Skapar ett perfekt indrag för texten */
+  margin: 15px 0;
+}
+
+/* 2. Styla listans textrader */
+.orange-punkt-lista li {
+  position: relative;
+  color: #101726;                     /* Er mörka textfärg */
+  margin-bottom: 12px;                /* Ger lite luft mellan punkterna */
+  line-height: 1.6;                   /* Gör texten lättläst och luftig */
+}
+
+/* 3. Bygg den egna orangea punkten */
+.orange-punkt-lista li::before {
+  content: "" !important;             /* Skapar det tomma elementet */
+  position: absolute;
+  left: -20px;                        /* Flyttar ut pricken till vänster */
+  top: 10px;                          /* Justerar pricken så den centrerar perfekt mot första textraden */
+  width: 8px;                         /* Storlek på pricken */
+  height: 8px;
+  background-color: #f28b50 !important; /* Er exakta orangea färg! */
+  border-radius: 50% !important;      /* Gör den helt rund */
 }
