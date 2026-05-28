@@ -115,11 +115,11 @@ h6 {
 /* Container för hela självtestet */
 .self-test-container {
   background-color: #0d1b2a;
-  color: #ffffff;
+  color: #fff9f1;
   padding: 40px;
   text-align: left;
   border-radius: 8px;
-  max-width: 800px;
+  max-width: 1500px;
   margin: 50px auto;
 }
 
@@ -132,38 +132,44 @@ h6 {
 /* Återställ textstorleken specifikt inuti självtestet så det inte blir 30px */
 .self-test-container p,
 .test-explanation p {
-  font-size: 16px;
-  color: #e67e22;
+  font-size: 20px;
+  color: #fff9f1;
+  
 }
 
 /* Klickbara zonen */
 .test-box {
-  background-color: #ffffff;
-  padding: 20px;
+  background-color: #fff9f1;
+  padding: 40px;
   border-radius: 4px;
   cursor: pointer;
   margin: 20px 0;
   transition: transform 0.2s ease;
-  position: relative;
+  position: center;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.test-box:hover {
+.test-box:hover img {
   transform: scale(1.05); /* Diskret feedback vid hover */
+  
 }
 
 .test-box img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  aspect-ratio: 21 / 10;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.2s ease; /*Gör att "poppen" glider fram mjukt*/
 }
 
 /* Förklarande text-boxen under bilden */
 .test-explanation {
   margin-top: 20px;
   padding: 15px;
-  background-color: #f8f9fa;
+  background-color: #fff9f1;
   border-left: 5px solid #e67e22;
   text-align: left;
   border-radius: 0 4px 4px 0;
@@ -195,7 +201,7 @@ h6 {
 
 /* Container för att centrera citatet på sidan och skapa luft */
 .quote-container {
-  max-width: 650px;
+  max-width: 1000px;
   margin: 80px auto; /* Skapar ordentligt med avstånd uppåt och nedåt */
   padding: 0, 20px;
   text-align: center;
@@ -204,8 +210,8 @@ h6 {
 
 /* Själva citattexten */
 .quote-container blockquote {
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
+  font-family: "Lexend Mega", sans-serif;
+  font-size: 42px;
   font-weight: 400;
   line-height: 1.5;
   color: #101726;
@@ -213,22 +219,26 @@ h6 {
   padding: 50px;
   position: relative;
   z-index: 2; /* Lägger texten ovanpå det stora tecknet */
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* Det stora ljusblå citationstecknet i bakgrunden */
 .quote-container::before {
   content: "“";
   font-family: "Lexend Mega", sans-serif;
-  font-size: 350px;
+  font-size: 500px;
   color: #7bb2ff;
   position: absolute;
-  top: -150px; /* Flyttar upp det så det hamnar bakom texten */
+  top: -390px; /* Flyttar upp det så det hamnar bakom texten */
   left: 20%;
-  transform: translateX(-50%); /* Centrerar tecknet helt i mitten */
   z-index: 1; /* Lägger det bakom texten */
   opacity: 0.4; /* Gör det lite transparent */
   pointer-events: none; /* Ser till att det inte är i vägen för klick */
   margin: 50px;
+  display: inline-block;
+  transform: translateX(-50%) rotate(180deg);
 }
 
 img.gif-image {
@@ -503,12 +513,31 @@ img.graph-image {
   padding-left: 19px;
 }
 
-/* Själva huvudboxen */
+.box-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  margin: 40px auto;
+  align-items: flex-start;
+  
+}
+
+@media (max-width: 768px) {
+  .box-container {
+    flex-direction: column; 
+    gap: 20px;
+  }
+}
+
+/* Utfälldbar meny */
 .text-box {
+  flex: 1;
   border: 1px solid #101726;   /* Mörk ram */
   border-radius: 12px;         /* Rundade hörn */
   padding: 24px;               /* Luft på insidan */
-  max-width: 70ch;             /* Samma sköna textbredd som källorna */
+  max-width: 70ch;             /* Samma textbredd som källorna */
   background-color: #fffaf5;   /* Din ljusa bakgrundsfärg */
   transition: all 0.3s ease;   /* Gör att det känns mjukt när den öppnas */
   font-family: Lexend Mega sans-serif;
@@ -519,7 +548,12 @@ img.graph-image {
 .text-box summary {
   cursor: pointer;             /* Gör att muspekaren blir en hand */
   list-style: none; /* tar bort pilen bredvid rubriken i Chrome, Firefox, Edge mfl */
+  outline: none;
+  padding: 5px;
+  border-radius: 4px;
+  
 }
+
 
 .text-box summary::-webkit-details-marker { /*tar bort pilen i Safari*/
   display: none; 
@@ -529,11 +563,88 @@ img.graph-image {
   display: inline-block;       /* Håller rubriken snygg bredvid pilen */
   margin-top: 0;
   font-family: 'Lexend Mega', sans-serif;
+  color: #f28b50;
 }
 
 /* Det dolda innehållet som hamnar under när man expanderar */
 .extra-content {
   margin-top: 16px;
   padding-top: 16px;
+  cursor: pointer;
   
+}
+
+/* ==========================================================================
+   1. GRUNDSTYLING (Gör båda klasserna orangea och fetstilta hela tiden)
+   ========================================================================== */
+   .text-box .visa-mer, 
+   .text-box .visa-mindre {
+       color: #f28b50 !important;      /* Sätter er orangea färg på båda två */
+       font-weight: bold !important;    /* Gör båda fetstilta */
+       cursor: pointer;
+   }
+   
+   /* ==========================================================================
+      2. NÄR MENYN ÄR STÄNGD (Standardläget)
+      ========================================================================== */
+   
+   /* Visa "läsa mer" */
+   .text-box .visa-mer {
+       display: inline !important;
+   }
+   
+   /* Göm "stäng" helt */
+   .text-box .visa-mindre {
+       display: none !important;
+   }
+   
+   /* ==========================================================================
+      3. NÄR MENYN ÄR ÖPPEN (När man har klickat på boxen)
+      ========================================================================== */
+   
+   /* Göm "läsa mer" */
+   .text-box[open] .visa-mer {
+       display: none !important;
+   }
+   
+   /* Tvinga fram "stäng"-texten så den syns perfekt */
+   .text-box[open] .visa-mindre {
+       display: inline !important;
+   }
+
+   /* Gör så att när rutan är öppen, blir hela den extra texten klickbar 
+   och stänger rutan OM man klickar längst ner */
+.text-box[open] .extra-content {
+  pointer-events: none; /* Gör att den vanliga texten inte reagerar på klick */
+}
+
+/* Aktivera klick enbart på själva stäng-texten */
+.text-box .visa-mindre {
+  pointer-events: auto; /* Gör texten klickbar igen */
+}
+
+.orange-punkt-lista {
+  list-style: none !important;        /* Denna tar bort de svarta prickarna helt! */
+  padding-left: 25px !important;      /* Skapar ett perfekt indrag för texten */
+  margin: 15px 0;
+}
+
+/* 2. Styla listans textrader */
+.orange-punkt-lista li {
+  position: relative;
+  color: #101726;                     /* Er mörka textfärg */
+  margin-bottom: 12px;                /* Ger lite luft mellan punkterna */
+  line-height: 1.6;                   /* Gör texten lättläst och luftig */
+}
+
+/* 3. Bygg den egna orangea punkten */
+.orange-punkt-lista li::before {
+  content: "" !important;             /* Skapar det tomma elementet */
+  position: absolute;
+  left: -20px;                        /* Flyttar ut pricken till vänster */
+  top: 10px;                          /* Justerar pricken så den centrerar perfekt mot första textraden */
+  width: 8px;                         /* Storlek på pricken */
+  height: 8px;
+  background-color: #f28b50 !important; /* Er exakta orangea färg! */
+  border-radius: 50% !important;      /* Gör den helt rund */
 }
