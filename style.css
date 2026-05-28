@@ -121,6 +121,7 @@ h6 {
   border-radius: 8px;
   max-width: 1500px;
   margin: 50px auto;
+  box-shadow:0px 4px 12px rgba(16, 23, 38, 0.3);
 }
 
 .self-test-container h2 {
@@ -129,11 +130,18 @@ h6 {
   font-size: 250%;
 }
 
+.self-test-container h3 {
+  color: #e67e22;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
 /* Återställ textstorleken specifikt inuti självtestet så det inte blir 30px */
 .self-test-container p,
 .test-explanation p {
-  font-size: 20px;
+  font-size: 16px;
   color: #fff9f1;
+  margin-top: 40px;
   
 }
 
@@ -162,6 +170,7 @@ h6 {
   aspect-ratio: 21 / 10;
   object-fit: cover;
   object-position: top;
+ 
   transition: transform 0.2s ease; /*Gör att "poppen" glider fram mjukt*/
 }
 
