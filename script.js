@@ -67,7 +67,7 @@ function printGDPChart(GDPdata) {
       plugins: {
         legend: {
           labels: {
-            color: "white",
+            color: "rgba(255, 249, 241, 1)",
           },
         },
       },
@@ -75,12 +75,15 @@ function printGDPChart(GDPdata) {
       scales: {
         x: {
           ticks: {
-            color: "white",
+            color: "rgba(255, 249, 241, 1)",
           },
         },
         y: {
           ticks: {
-            color: "white",
+            color: "rgba(255, 249, 241, 1)",
+          },
+          grid: {
+          color: "rgba(255, 249, 241, 1)"
           },
         },
       },
@@ -150,7 +153,7 @@ function printTransChart(csv) {
       plugins: {
         legend: {
           labels: {
-            color: "white",
+            color: "rgba(16, 23, 38, 1)",
           },
         },
       },
@@ -158,15 +161,19 @@ function printTransChart(csv) {
       scales: {
         x: {
           ticks: {
-            color: "white",
+            color: "rgba(16, 23, 38, 1)",
           },
         },
         y: {
           ticks: {
-            color: "white",
+            color: "rgba(16, 23, 38, 1)",
           },
+          grid: {
+            color: "rgba(16, 23, 38, 1)"
+      },
         },
       },
+
     },
   });
 }
