@@ -493,8 +493,6 @@ img.graph-image {
 .extra-content {
   margin-top: 16px;
   padding-top: 16px;
-  cursor: pointer;
-  
 }
 
 /* ==========================================================================
@@ -537,14 +535,14 @@ img.graph-image {
 
    /* Gör så att när rutan är öppen, blir hela den extra texten klickbar 
    och stänger rutan OM man klickar längst ner */
-.text-box[open] .extra-content {
+/*.text-box[open] .extra-content {
   pointer-events: none; /* Gör att den vanliga texten inte reagerar på klick */
-}
+
 
 /* Aktivera klick enbart på själva stäng-texten */
-.text-box .visa-mindre {
+/*.text-box .visa-mindre {
   pointer-events: auto; /* Gör texten klickbar igen */
-}
+
 
 .orange-punkt-lista {
   list-style: none !important;        /* Denna tar bort de svarta prickarna helt! */
